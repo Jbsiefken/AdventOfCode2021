@@ -16,14 +16,9 @@ namespace AdventOfCode2021
 
             List<Card> cards = GetCards(lines);
 
-            return CallNumbers(values, cards);
-        }
-
-        private static int CallNumbers(string[] values, List<Card> cards)
-        {
-            foreach(var value in values)
+            foreach (var value in values)
             {
-                foreach(var card in cards)
+                foreach (var card in cards)
                 {
                     if (card.Mark(value))
                     {
@@ -33,6 +28,32 @@ namespace AdventOfCode2021
             }
             return 0;
         }
+
+        public static int PartTwo()
+        {
+            var lines = File.ReadLines("aoc4.txt").ToList();
+            string[] values = lines[0].Split(",");
+
+            List<Card> cards = GetCards(lines);
+
+            foreach (var value in values)
+            {
+                foreach (var card in cards)
+                {
+                    if (card.Valid && card.Mark(value))
+                    {
+                        if (cards.Count(c => c.Valid) == 1)
+                        {
+                            var lastCard = cards.Single(c => c.Valid);
+                            return cards.Single(c => c.Valid).GetValue(int.Parse(value));
+                        }
+                        card.Invalidate();
+                    }
+                }
+            }
+            return 0;
+        }
+
 
         private static List<Card> GetCards(List<string> lines)
         {
@@ -55,12 +76,12 @@ namespace AdventOfCode2021
     {
         public string[][] Board { get; set; }
         public int NumRows { get; set; }
-        public int NumberMarked { get; set; }
+        public bool Valid { get; set; }
         public Card()
         {
             Board = new string[5][];
             NumRows = 0;
-            NumberMarked = 0;
+            Valid = true;
         }
 
         public bool AddRow(string row)
@@ -91,7 +112,6 @@ namespace AdventOfCode2021
                     if(Board[x][y] == number)
                     {
                         Board[x][y] = "X"+Board[x][y];
-                        NumberMarked++;
 
                         if(CheckVertical()
                         || CheckHorizontal()
@@ -164,6 +184,11 @@ namespace AdventOfCode2021
                 }
             }
             return false;
+        }
+
+        internal void Invalidate()
+        {
+            Valid = false;
         }
     }
 }
