@@ -1,0 +1,16 @@
+C:\Users\jsiefken\webapps\AdventOfCode2021\AdventOfCode2021\bin\Debug\net5.0\AdventOfCode2021.exe
+C:\Users\jsiefken\webapps\AdventOfCode2021\AdventOfCode2021\bin\Debug\net5.0\AdventOfCode2021.deps.json
+C:\Users\jsiefken\webapps\AdventOfCode2021\AdventOfCode2021\bin\Debug\net5.0\AdventOfCode2021.runtimeconfig.json
+C:\Users\jsiefken\webapps\AdventOfCode2021\AdventOfCode2021\bin\Debug\net5.0\AdventOfCode2021.runtimeconfig.dev.json
+C:\Users\jsiefken\webapps\AdventOfCode2021\AdventOfCode2021\bin\Debug\net5.0\AdventOfCode2021.dll
+C:\Users\jsiefken\webapps\AdventOfCode2021\AdventOfCode2021\bin\Debug\net5.0\ref\AdventOfCode2021.dll
+C:\Users\jsiefken\webapps\AdventOfCode2021\AdventOfCode2021\bin\Debug\net5.0\AdventOfCode2021.pdb
+C:\Users\jsiefken\webapps\AdventOfCode2021\AdventOfCode2021\obj\Debug\net5.0\AdventOfCode2021.csproj.AssemblyReference.cache
+C:\Users\jsiefken\webapps\AdventOfCode2021\AdventOfCode2021\obj\Debug\net5.0\AdventOfCode2021.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jsiefken\webapps\AdventOfCode2021\AdventOfCode2021\obj\Debug\net5.0\AdventOfCode2021.AssemblyInfoInputs.cache
+C:\Users\jsiefken\webapps\AdventOfCode2021\AdventOfCode2021\obj\Debug\net5.0\AdventOfCode2021.AssemblyInfo.cs
+C:\Users\jsiefken\webapps\AdventOfCode2021\AdventOfCode2021\obj\Debug\net5.0\AdventOfCode2021.csproj.CoreCompileInputs.cache
+C:\Users\jsiefken\webapps\AdventOfCode2021\AdventOfCode2021\obj\Debug\net5.0\AdventOfCode2021.dll
+C:\Users\jsiefken\webapps\AdventOfCode2021\AdventOfCode2021\obj\Debug\net5.0\ref\AdventOfCode2021.dll
+C:\Users\jsiefken\webapps\AdventOfCode2021\AdventOfCode2021\obj\Debug\net5.0\AdventOfCode2021.pdb
+C:\Users\jsiefken\webapps\AdventOfCode2021\AdventOfCode2021\obj\Debug\net5.0\AdventOfCode2021.genruntimeconfig.cache
