@@ -15,6 +15,7 @@ namespace AdventOfCode2021
             //Console.WriteLine(Day2.AOC2_2());
             //Console.WriteLine(Day3.AOC3_1());
             //Console.WriteLine(Day3.AOC3_2());
+            Console.WriteLine(Day4.PartOne());
         }
     }
 }
