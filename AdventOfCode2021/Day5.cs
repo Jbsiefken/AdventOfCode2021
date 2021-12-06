@@ -24,6 +24,22 @@ namespace AdventOfCode2021
             return hits.Count(h => h.Value > 1);
         }
 
+        public static int PartTwo()
+        {
+            var lines = File.ReadLines("aoc5.txt").ToList();
+            List<LineSegment> lineSegments = new List<LineSegment>();
+            string confession = "I am very sleepy and refactoring is hard.";
+
+            foreach (var line in lines)
+            {
+                lineSegments.Add(new LineSegment(line));
+            }
+
+            var hits = GetHitBoxes(lineSegments, confession);
+
+            return hits.Count(h => h.Value > 1);
+        }
+
         private static Dictionary<string, int> GetHitBoxes(List<LineSegment> lineSegments)
         {
             Dictionary<string, int> hits = new Dictionary<string, int>();
@@ -48,6 +64,32 @@ namespace AdventOfCode2021
                         hits[point] = hits.ContainsKey(point) ? hits[point] + 1 : 1;
 
                     point = "";
+                }
+            }
+
+            return hits;
+        }
+
+        private static Dictionary<string, int> GetHitBoxes(List<LineSegment> lineSegments, string idk)
+        {
+            Dictionary<string, int> hits = GetHitBoxes(lineSegments);
+            string point;
+            int addValueX;
+            int addValueY;
+
+            foreach (var line in lineSegments)
+            {
+                if (!line.IsDiagonal() || line.Length() == 0)
+                    continue;
+
+                for (int i = 0; i <= line.Length(); i++)
+                {
+                    addValueX = line.IsPositive() ? i : -i;
+                    addValueY = line.IsNeSwDiagonal() ? addValueX : -addValueX;
+
+                    point = $"{line.Start.X + addValueX},{line.Start.Y + addValueY}";
+
+                    hits[point] = hits.ContainsKey(point) ? hits[point] + 1 : 1;
                 }
             }
 
@@ -78,9 +120,23 @@ namespace AdventOfCode2021
             return Start.X == End.X;
         }
 
+        public bool IsDiagonal()
+        {
+            return IsNeSwDiagonal() || IsNwSeDiagonal();
+        }
+
+        public bool IsNwSeDiagonal()
+        {
+            return Start.X - End.X == Start.Y - End.Y * -1;
+        }
+        public bool IsNeSwDiagonal()
+        {
+            return Start.X - End.X == Start.Y - End.Y;
+        }
+
         public int Length()
         {
-            if (IsHorizontal())
+            if (IsHorizontal() || IsDiagonal())
             {
                 return Math.Abs(Start.X - End.X);
             }
@@ -93,7 +149,7 @@ namespace AdventOfCode2021
 
         public bool IsPositive()
         {
-            if (IsHorizontal())
+            if (IsHorizontal() || IsDiagonal())
             {
                 return Start.X < End.X;
             }
