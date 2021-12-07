@@ -57,7 +57,7 @@ namespace AdventOfCode2021
 
                     if (line.IsHorizontal())
                         point = $"{line.Start.X + addValue},{line.Start.Y}";
-                    else if (line.IsVertical())
+                    if (line.IsVertical())
                         point = $"{line.Start.X},{line.Start.Y + addValue}";
 
                     if(point != "")
@@ -79,7 +79,7 @@ namespace AdventOfCode2021
 
             foreach (var line in lineSegments)
             {
-                if (!line.IsDiagonal() || line.Length() == 0)
+                if (!line.IsDiagonal())
                     continue;
 
                 for (int i = 0; i <= line.Length(); i++)

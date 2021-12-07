@@ -19,7 +19,9 @@ namespace AdventOfCode2021
             //Console.WriteLine(Day4.PartTwo());
             //Console.WriteLine(Day5.PartTwo());
             //Console.WriteLine(Day6.PartOne());
-            Console.WriteLine(Day6.PartTwo());
+            //Console.WriteLine(Day6.PartTwo());
+            //Console.WriteLine(Day7.PartOne());
+            Console.WriteLine(Day7.PartTwo());
         }
     }
 }
