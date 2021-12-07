@@ -127,11 +127,15 @@ namespace AdventOfCode2021
 
         public bool IsNwSeDiagonal()
         {
-            return Start.X - End.X == Start.Y - End.Y * -1;
+            int diffX = Start.X - End.X;
+            int diffY = Start.Y - End.Y;
+            return diffX == -diffY;
         }
         public bool IsNeSwDiagonal()
         {
-            return Start.X - End.X == Start.Y - End.Y;
+            int diffX = Start.X - End.X;
+            int diffY = Start.Y - End.Y;
+            return diffX == diffY;
         }
 
         public int Length()
