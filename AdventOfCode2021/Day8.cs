@@ -33,7 +33,6 @@ namespace AdventOfCode2021
             for(int i = 0; i < lines.Count; i++)
             {
                 numbers = new Dictionary<string, string>();
-                keys = new Dictionary<string, string>();
                 input = lines[i].Substring(0, lines[0].IndexOf(" |")).Split(" ");
                 output = lines[i].Substring(lines[0].LastIndexOf("| ") + 1).Split(" ", StringSplitOptions.RemoveEmptyEntries);
                 result = "";
@@ -43,22 +42,18 @@ namespace AdventOfCode2021
                     if(number.Length == 2)
                     {
                         numbers["1"] = number;
-                        keys[number] = "1";
                     }
                     else if(number.Length == 3)
                     {
                         numbers["7"] = number;
-                        keys[number] = "7";
                     }
                     else if(number.Length == 4)
                     {
                         numbers["4"] = number;
-                        keys[number] = "4";
                     }
                     else if(number.Length == 7)
                     {
                         numbers["8"] = number;
-                        keys[number] = "8";
                     }
                 }
                 // 3
@@ -67,7 +62,6 @@ namespace AdventOfCode2021
                     if(number.Length == 5 && numbers["7"].All(c => number.Contains(c)))
                     {
                         numbers["3"] = number;
-                        keys[number] = "3";
                         break;
                     }
                 }
@@ -77,7 +71,6 @@ namespace AdventOfCode2021
                     if (number.Length == 6 && !numbers["7"].All(c => number.Contains(c)))
                     {
                         numbers["6"] = number;
-                        keys[number] = "6";
                         break;
                     }
                 }
@@ -96,7 +89,6 @@ namespace AdventOfCode2021
                     if (number.Length == 5 && !numbers["7"].All(c => number.Contains(c)) && number.Contains(upperRightVertical))
                     {
                         numbers["2"] = number;
-                        keys[number] = "2";
                         break;
                     }
                 }
@@ -106,7 +98,6 @@ namespace AdventOfCode2021
                     if (number.Length == 5 && !numbers["7"].All(c => number.Contains(c)) && !number.Contains(upperRightVertical))
                     {
                         numbers["5"] = number;
-                        keys[number] = "5";
                         break;
                     }
                 }
@@ -116,7 +107,6 @@ namespace AdventOfCode2021
                     if (number.Length == 6 && numbers["3"].All(c => number.Contains(c)))
                     {
                         numbers["9"] = number;
-                        keys[number] = "9";
                         break;
                     }
                 }
@@ -126,7 +116,6 @@ namespace AdventOfCode2021
                     if (number.Length == 6 && !numbers.ContainsValue(number))
                     {
                         numbers["0"] = number;
-                        keys[number] = "0";
                         break;
                     }
                 }
